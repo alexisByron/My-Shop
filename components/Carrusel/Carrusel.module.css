@@ -2,3 +2,12 @@
   max-height: 400px;
   object-fit: contain;
 }
+
+.textImage {
+  z-index:1;
+  position:absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+  top: 25%;
+}

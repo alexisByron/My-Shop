@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./NavBar.module.css";
 
 export default function NavBar() {
@@ -11,19 +12,23 @@ export default function NavBar() {
         className={styles.logo}
       />
       <div className={styles.category}>
-        <a className={styles.categoryText} href='/'>
+        <Link className={styles.categoryText} href={"/"}>
           Inicio
-        </a>
-        <a className={styles.categoryText} href='/test'>
-          Productos
-        </a>
+        </Link>
+
+        <Link className={styles.categoryText} href={"/productos"}>
+        Productos
+        </Link>
       </div>
 
       <div>
         <button className={styles.btn} onClick={() => console.log("Ingresar")}>
           Ingresar
         </button>
-        <button className={styles.btn} onClick={() => console.log("Registrarme")}>
+        <button
+          className={styles.btn}
+          onClick={() => console.log("Registrarme")}
+        >
           Registrarme
         </button>
       </div>

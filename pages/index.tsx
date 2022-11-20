@@ -17,15 +17,14 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div>
+      <>
         <NavBar />
         <CustomCarrusel />
         <Partners />
         <Info />
         <Contact />
-      </div>
-<Footer />
-   
+      </>
+      <Footer />
     </div>
   );
 }
