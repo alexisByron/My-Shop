@@ -1,0 +1,10 @@
+.sliderContainerImg {
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.form ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(237, 216, 255, 1);
+  opacity: 1; /* Firefox */
+}
+

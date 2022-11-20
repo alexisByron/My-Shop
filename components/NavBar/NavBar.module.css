@@ -1,0 +1,38 @@
+.topnav {
+  background-color:rgba(66, 24, 102, 1);
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.logo {
+  width: 150px;
+  height: 50px;
+}
+
+.category {
+  align-self: center;
+}
+
+.categoryText{
+  color: rgba(237, 216, 255, 1);
+  padding: 0rem 1rem 0rem 1rem;
+  text-decoration: none;
+  font-size: 15px;
+  justify-content: center;
+}
+
+.btn{
+  cursor: pointer;
+  border: 1px solid rgba(237, 216, 255, 1);
+  background-color: transparent;
+  padding: 10px;
+  /* height: 30px; */
+  /* width: 200px; */
+  color: rgba(237, 216, 255, 1);
+  font-size: 14px;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  margin-left: 5px;
+  margin-right: 5px;
+}

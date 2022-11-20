@@ -1,0 +1,15 @@
+.container {
+  /* flex-direction: row; */
+  display: flex;
+  justify-content: center;
+  background-color: rgba(237, 216, 255, 1);
+}
+
+.container h4 {
+  /* color: 17,35,55; */
+  color: rgba(33, 12, 51, 1);
+}
+
+.container p{
+  color: rgba(33, 12, 51, 1);
+}

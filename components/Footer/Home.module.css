@@ -12,12 +12,12 @@
   justify-content: center;
   align-items: center;
   /* flex-grow: 1; */
-  color: white;
+  color: rgba(237, 216, 255, 1);
   
 }
 
 .title a {
-  color:rgba(66, 24, 102, 1);
+  color:rgba(237, 216, 255, 1);
   text-decoration: none;
 }
 
