@@ -2,9 +2,9 @@ import styles from "./Home.module.css";
 
 export default function Footer(){
     return    <footer className={styles.footer} style={{ fontSize: 14 }}>
-    <div style={{ display: "flex", color: "rgba(237, 216, 255, 1)" }}>
-      <div>
-        <h4 style={{ fontSize: 16 }}>Informacion de contacto</h4>
+    <div style={{ display: "flex", color: "black" }}>
+      <div >
+        <h4 style={{ fontSize: 16, color:'black' }}>Informacion de contacto</h4>
         <ul>
           <span style={{ fontSize: 14 }}>+56 2 2603 7074</span>
         </ul>
@@ -20,7 +20,7 @@ export default function Footer(){
       </div>
 
       <div style={{ marginLeft: 40 }}>
-        <h4 style={{ fontSize: 16 }}>Dirección</h4>
+        <h4 style={{ fontSize: 16, color:'black' }}>Dirección</h4>
         <ul>
           <span>Lucila Godoy 374, Quilicura, Santiago</span>
         </ul>

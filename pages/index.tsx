@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import NavBar from "../components/NavBar/NavBar";
 import CustomCarrusel from "../components/Carrusel/Carrusel";
@@ -7,6 +6,8 @@ import Partners from "../components/Partners/Partners";
 import Contact from "../components/Contact/Contact";
 import Info from "../components/Info/Info";
 import Footer from "../components/Footer/Footer";
+import ComentList from "../components/ComentList/ComentList";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -18,10 +19,123 @@ export default function Home() {
       </Head>
 
       <>
-        <NavBar />
-        <CustomCarrusel />
-        <Partners />
+        <div className={styles.backgroundImageTest}>
+          <NavBar backgroundColor={'transparent'}/>
+          <div
+            style={{
+              display: "flex",
+              padding: "30px 40px 0px 40px",
+              maxHeight: 600,
+            }}
+          >
+            <div style={{ width: "60%" }}>
+              <motion.h1
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3, type: "spring" }}
+              >
+                Distribuidora El Muñeco
+              </motion.h1>
+              <motion.div
+                style={{ display: "flex", position: "relative" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3, delay: 0.1, type: "spring" }}
+              >
+                <img
+                  src='/icons/phone.png'
+                  alt='phone'
+                  style={{
+                    height: 30,
+                    width: 30,
+                    placeSelf: "center",
+                    margin: "0px 5px 0px 5px",
+                  }}
+                />
+
+                <h3>+56 2 2603 7074</h3>
+              </motion.div>
+              <motion.div
+                style={{ display: "flex", position: "relative" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3, delay: 0.15, type: "spring" }}
+              >
+                <img
+                  src='/icons/location.png'
+                  alt='location'
+                  style={{
+                    height: 30,
+                    width: 30,
+                    placeSelf: "center",
+                    margin: "0px 5px 0px 5px",
+                  }}
+                />
+                <h3>Lucila Godoy 374, Quilicura, Santiago</h3>
+              </motion.div>
+              <motion.div
+                style={{ display: "flex", position: "relative" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3, delay: 0.2, type: "spring" }}
+              >
+                <img
+                  src='/icons/phone.png'
+                  alt='phone'
+                  style={{
+                    height: 30,
+                    width: 30,
+                    placeSelf: "center",
+                    margin: "0px 5px 0px 5px",
+                  }}
+                />
+                <h3>+56 2 2603 5602</h3>
+              </motion.div>
+              <motion.div
+                style={{ display: "flex", position: "relative" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3, delay: 0.25, type: "spring" }}
+              >
+                <img
+                  src='/icons/mail.png'
+                  alt='mail'
+                  style={{
+                    height: 30,
+                    width: 30,
+                    placeSelf: "center",
+                    margin: "0px 5px 0px 5px",
+                  }}
+                />
+                <h3>Contactar por Email</h3>
+              </motion.div>
+              <motion.div
+                style={{
+                  width: "100%",
+                  alignItems: "flex-end",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3, delay: 0.3, type: "spring" }}
+              >
+                <button
+                  className={styles.btn}
+                  onClick={() => console.log("Ingresar")}
+                >
+                  Contactanos Ahora
+                </button>
+              </motion.div>
+            </div>
+            <div style={{ width: "30%" }}>
+              <CustomCarrusel />
+            </div>
+          </div>
+        </div>
         <Info />
+        <Partners />
+        <ComentList />
         <Contact />
       </>
       <Footer />

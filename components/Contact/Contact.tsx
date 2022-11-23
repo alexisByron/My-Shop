@@ -27,10 +27,14 @@ export default function Contact() {
             {...register("example2")}
             placeholder='Nombre'
             style={{
-              width: 240,
+              width: 340,
+              height: 50,
               padding: 10,
               marginRight: 10,
-              background: "rgba(66, 24, 102, 1)",
+              background: "#f1ebea",
+              borderRadius: 30,
+              border: "none",
+              color:'black'
             }}
           />
 
@@ -39,10 +43,14 @@ export default function Contact() {
             {...register("exampleRequired2", { required: true })}
             placeholder='Empresa'
             style={{
-              width: 240,
+              width: 340,
+              height: 50,
               padding: 10,
-              marginLeft: 10,
-              background: "rgba(66, 24, 102, 1)",
+              marginRight: 10,
+              background: "#f1ebea",
+              borderRadius: 30,
+              border: "none",
+              color:'black'
             }}
           />
           {/* errors will return when field validation fails  */}
@@ -53,10 +61,14 @@ export default function Contact() {
             {...register("example2")}
             placeholder='Telefono'
             style={{
-              width: 240,
+              width: 340,
+              height: 50,
               padding: 10,
               marginRight: 10,
-              background: "rgba(66, 24, 102, 1)",
+              background: "#f1ebea",
+              borderRadius: 30,
+              border: "none",
+              color:'black'
             }}
           />
 
@@ -65,29 +77,32 @@ export default function Contact() {
             {...register("exampleRequired2", { required: true })}
             placeholder='Correo Electronico'
             style={{
-              width: 240,
+              width: 340,
+              height: 50,
               padding: 10,
-              marginLeft: 10,
-              background: "rgba(66, 24, 102, 1)",
+              marginRight: 10,
+              background: "#f1ebea",
+              borderRadius: 30,
+              border: "none",
+              color:'black'
             }}
           />
           {/* errors will return when field validation fails  */}
         </div>
 
-        <div style={{ justifySelf: "center", marginTop: 5, maxWidth: 500 }}>
+        <div style={{ justifySelf: "center", marginTop: 5 }}>
           {/* include validation with required or other standard HTML validation rules */}
           <textarea
             {...register("exampleRequired3", { required: true })}
             placeholder='Escribe cualquier duda que tengas, estamos para ayudarte..........'
             style={{
+              width: 700,
+              height: 200,
               padding: 10,
-              height: 100,
-              maxHeight: 350,
-              minHeight: 100,
-              width: 500,
-              maxWidth: 500,
-              minWidth: 250,
-              background: "rgba(66, 24, 102, 1)",
+              background: "#f1ebea",
+              borderRadius: 30,
+              border: "none",
+              color:'black'
             }}
           />
         </div>
@@ -95,12 +110,16 @@ export default function Contact() {
         <input
           type='submit'
           style={{
-            width: 250,
             padding: 10,
             margin: "auto",
             marginTop: 20,
-            background: "rgba(66, 24, 102, 1)",
-            color:'rgba(237, 216, 255, 1)'
+            background: "#f1ebea",
+            color: "black",
+            border: "none",
+            boxShadow: "3px 6px 6px 3px rgb(0 0 0 / 60%)",
+            borderRadius: 30,
+            width: 400,
+            height:50
           }}
         />
       </form>

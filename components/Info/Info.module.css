@@ -1,15 +1,29 @@
 .container {
-  /* flex-direction: row; */
+  flex-direction: row;
   display: flex;
   justify-content: center;
-  background-color: rgba(237, 216, 255, 1);
+  /* background-color: rgb(187, 189, 188); */
+  position: relative;
+  margin-top: 15px;
 }
 
-.container h4 {
-  /* color: 17,35,55; */
-  color: rgba(33, 12, 51, 1);
+.card {
+  height: 350px;
+  width: 280px;
+  background-color: #f1ebea;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 3px 6px 6px 3px rgba(0, 0, 0, 0.6);
 }
 
-.container p{
-  color: rgba(33, 12, 51, 1);
+.card p {
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0px 20px 0px 20px;
+}
+
+.card h3 {
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0px 20px 0px 20px;
+  text-align: center;
+  font-weight: 800;
 }

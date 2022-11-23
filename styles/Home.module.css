@@ -64,7 +64,7 @@
 .card {
   margin: 1rem;
   padding: 1.5rem;
-  text-align: left;
+  /* text-align: left; */
   color: inherit;
   text-decoration: none;
   border: 1px solid #eaeaea;
@@ -94,6 +94,37 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.btn{
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  background-color: white;
+  padding: 20px 40px 20px 40px;
+  /* height: 30px; */
+  /* width: 200px; */
+  color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  margin-left: 5px;
+  margin-right: 5px;
+  position: relative;
+  border-radius: 50px;
+  font-size: 15px;
+}
+
+.backgroundImageTest::before {    
+  content: "";
+  background-image: url('https://img.freepik.com/vector-gratis/gente-haciendo-cola-supermercado-clientes-esperando-larga-fila-pagar-mostrador-tienda-ilustracion-plana-vectorial-mercado-cajero-compradores-cestas-compra-carro_107791-9816.jpg?w=2000&t=st=1669170621~exp=1669171221~hmac=f8d40f39f6c624f7102776978e5de65c7f517a83912f6e6561ed602f9dd99564');
+  filter: blur(5px);
+  filter: brightness(0.3);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
+  max-height: 600px;
 }
 
 @media (max-width: 600px) {

@@ -1,185 +1,68 @@
 import styles from "./Info.module.css";
+import { motion } from "framer-motion";
 
 export default function Info() {
+  const cards = [
+    {
+      title: "Despacho en 24 horas",
+      description:
+        "Despacho en menos de 24 horas, dentro de las comunas de Conchalí, Independencia, Recoleta, Huechuraba,Colina, Lampa, Quilicura, Cerro Navia,Lo Prado, Quinta Normal, Pudahuel y Renca.",
+      icon: "/icons/truck.png",
+    },
+    {
+      title: "Descuentos exclusivos",
+      description:
+        "Al ser cliente habitual recibiras descuentos exclusivos en tus compras. solo debes registrarte y listo.",
+      icon: "/icons/discount.png",
+    },
+    {
+      title: "Misión",
+      description:
+        "Nuestro principal objetivo como empresa es ser su canal de comunicación y distribución entre los grandes proveedores y el comercio minorista o almaceneros. Nuestro Servicio de distribución es el canal óptimo para que los productos que los minoristas necesitan lleguen directamente a sus locales comerciales.",
+      icon: "/icons/partner.png",
+    },
+    {
+      title: "10 años de experiencia",
+      description:
+        "Mas de 10 años de experiencia en el rubro de la distribución de productos de consumo masivo. Dando una experiencia de calidad a nuestros clientes. quienes año tras año nos prefieren por nuestra calidad de servicio y productos.",
+      icon: "/icons/certificado.png",
+    },
+  ];
+
   return (
-    <div className={styles.container}>
-      <div style={{ padding: 50, maxWidth: 400 }}>
-        <h4 style={{ textAlign: "center" }}>Despacho en 24 horas</h4>
-        <p>
-          Para su comodidad, contamos con despacho las 24 horas en las comunas
-          de: Conchalí, Independencia, Recoleta, Huechuraba, Colina, Lampa,
-          Quilicura, Cerro Navia, Lo Prado, Quinta Normal, Pudahuel y Renca.
-        </p>
-      </div>
-      <div style={{ marginBottom: 10 }}>
-        <h4 style={{ textAlign: "center" }}>Flujo de compra</h4>
-        <div style={{ display: "flex" }}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div
-              style={{
-                backgroundColor: "rgba(66, 24, 102, 1)",
-                maxHeight: 300,
-                maxWidth: 250,
-                borderRadius: 15,
-                marginRight: 10,
-                boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
-              }}
-            >
-              <div style={{ display: "flex" }}>
-                <img
-                  src='/icons/register.png'
-                  alt='registro'
-                  style={{ height: 50, width: 50, padding: 5 }}
-                />
-                <p
-                  style={{
-                    fontSize: 14,
-
-                    paddingRight: 10,
-                    color: "rgba(237, 216, 255, 1)",
-                  }}
-                >
-                  Registrate
-                </p>
-              </div>
-              <p
-                style={{
-                  fontSize: 12,
-                  paddingLeft: 10,
-                  paddingRight: 10,
-                  color: "rgba(237, 216, 255, 1)",
-                  marginTop: 0,
-                }}
-              >
-                Es muy importante para poder entrarte la mejor atencion
-              </p>
-            </div>
-            <div
-              style={{
-                backgroundColor: "rgba(66, 24, 102, 1)",
-                maxHeight: 300,
-                maxWidth: 250,
-                borderRadius: 15,
-                boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
-                marginTop: 10,
-              }}
-            >
-              <div style={{ display: "flex" }}>
-                <img
-                  src='/icons/list.png'
-                  alt='list'
-                  style={{ height: 50, width: 50, padding: 5 }}
-                />
-                <p
-                  style={{
-                    fontSize: 14,
-                    paddingRight: 10,
-                    color: "rgba(237, 216, 255, 1)",
-                  }}
-                >
-                  Selecciona los productos
-                </p>
-              </div>
-              <p
-                style={{
-                  fontSize: 12,
-                  paddingLeft: 10,
-                  paddingRight: 10,
-                  color: "rgba(237, 216, 255, 1)",
-                  marginTop: 0,
-                }}
-              >
-                Una vez generes la compra con el pago recibiras un comprobante
-                al correo registrado
-              </p>
-            </div>
+    <motion.div
+      className={styles.container}
+      initial={{ margin: 0, opacity: 0 }}
+      animate={{ marginTop: 40, opacity: 1 }}
+      transition={{ duration: 4, type: "spring" }}
+    >
+      {cards.map((card, index) => (
+        <div key={index} className={styles.card}>
+          <div style={{ width: "100%", textAlign: "center", marginTop: 10 }}>
+            <motion.img
+              src={card.icon}
+              alt='Icon'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 4, type: "spring" }}
+            />
           </div>
-
-          <div
-            style={{ display: "flex", marginTop: 10, flexDirection: "column" }}
+          <motion.h3
+            initial={{ x: 10 }}
+            animate={{ x: -10 }}
+            transition={{ duration: 4, type: "spring" }}
           >
-            <div
-              style={{
-                backgroundColor: "rgba(66, 24, 102, 1)",
-                maxHeight: 300,
-                maxWidth: 250,
-                borderRadius: 15,
-                marginRight: 10,
-                boxShadow: "0px 0px 10px 0px rgba(66, 24, 102, 1)",
-              }}
-            >
-              <div style={{ display: "flex" }}>
-                <img
-                  src='/icons/mensaje.png'
-                  alt='mensaje'
-                  style={{ height: 50, width: 50, padding: 5 }}
-                />
-                <p
-                  style={{
-                    fontSize: 14,
-                    paddingRight: 10,
-                    color: "rgba(237, 216, 255, 1)",
-                  }}
-                >
-                  Escribenos
-                </p>
-              </div>
-              <p
-                style={{
-                  fontSize: 12,
-                  paddingLeft: 10,
-                  paddingRight: 10,
-                  color: "rgba(237, 216, 255, 1)",
-                  marginTop: 0,
-                }}
-              >
-                Escribenos cualquier duda o consulta que tengas, antes de
-                comprar para que podamos brindarte la mejor experiencia
-              </p>
-            </div>
-            <div
-              style={{
-                backgroundColor: "rgba(66, 24, 102, 1)",
-                maxHeight: 300,
-                maxWidth: 250,
-                borderRadius: 15,
-                boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
-                marginTop: 10,
-              }}
-            >
-              <div style={{ display: "flex" }}>
-                <img
-                  src='/icons/shop.png'
-                  alt='shop'
-                  style={{ height: 50, width: 50, padding: 5 }}
-                />
-                <p
-                  style={{
-                    fontSize: 14,
-                    paddingRight: 10,
-                    color: "rgba(237, 216, 255, 1)",
-                  }}
-                >
-                  Pronto recibiras tus productos
-                </p>
-              </div>
-              <p
-                style={{
-                  fontSize: 12,
-                  paddingLeft: 10,
-                  paddingRight: 10,
-                  color: "rgba(237, 216, 255, 1)",
-                  marginTop: 0,
-                }}
-              >
-                Si la ubicacion de entrega es en las comunas indicadas con
-                despacho expres espera tu pedido en 24 horas, de lo contrario
-                nos comprometemos a entregarlo en un maximo de 72 horas.
-              </p>
-            </div>
-          </div>
+            {card.title}
+          </motion.h3>
+          <motion.p
+            initial={{ y: 10 }}
+            animate={{ y: -10 }}
+            transition={{ duration: 4, type: "spring" }}
+          >
+            {card.description}
+          </motion.p>
         </div>
-      </div>
-    </div>
+      ))}
+    </motion.div>
   );
 }

@@ -3,9 +3,15 @@
   object-fit: contain;
 }
 
+.img {
+  border-radius: 20px;
+  height: 300px;
+  position: relative;
+}
+
 .textImage {
-  z-index:1;
-  position:absolute;
+  z-index: 1;
+  position: absolute;
   color: white;
   text-align: center;
   width: 100%;
