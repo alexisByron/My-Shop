@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function ProductList() {
   
   const productos = [
@@ -64,10 +65,11 @@ export default function ProductList() {
             borderRadius: 10,
           }}
         >
-          <img
+          <Image
             src={producto.imagen}
             alt={producto.nombre}
-            style={{ width: "100%", height:130, objectFit:'contain' }}
+            height={130}
+            style={{ objectFit:'contain' }}
           />
           <h3 style={{ color: "rgba(33, 12, 51, 1)" }}>{producto.nombre}</h3>
           <p style={{ color: "rgba(33, 12, 51, 1)" }}>{producto.descripcion}</p>

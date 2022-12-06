@@ -123,7 +123,8 @@ export default function Contact() {
             border: "none",
             boxShadow: "1px 1px 5px 1px rgba(43, 184, 184)",
             borderRadius: 30,
-            minWidth: 400,
+            maxWidth: 400,
+            width:'100%',
             height: 50,
           }}
         />

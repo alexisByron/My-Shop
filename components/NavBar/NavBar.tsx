@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const useOutsideClick = (callback: { (): void; (): void }) => {
-  const ref = React.useRef();
+  const ref = useRef();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClick = (event: any) => {
       callback();
     };
@@ -16,7 +17,7 @@ const useOutsideClick = (callback: { (): void; (): void }) => {
     return () => {
       document.removeEventListener("click", handleClick, false);
     };
-  }, []);
+  });
 
   return ref;
 };
@@ -38,11 +39,13 @@ export default function NavBar({ backgroundColor }: any) {
         className={styles.category}
         style={{ display: "flex" }}
       >
-        <img
+        <Image
           src={
             "https://img.freepik.com/vector-gratis/aplicacion-mercado-digital-negocio-remoto-comercio-electronico-tienda-internet-mercado-movil-cliente-personaje-dibujos-animados-telefono-inteligente-ilustracion-metafora-concepto-aislado-vector_335657-2762.jpg?w=1380&t=st=1669170657~exp=1669171257~hmac=ee596ca525af6ab1db1e2effcfb20ce243966e26043c01a81765b7ce05661551"
           }
           alt='Logo'
+          width={80}
+          height={80}
           className={styles.logo}
           style={{ borderRadius: 20 }}
         />
@@ -98,15 +101,23 @@ export default function NavBar({ backgroundColor }: any) {
             className={styles.btn}
             onClick={() => setIsOpenMenu(!isOpenMenu)}
           >
-            <img
+            <Image
               src={"/icons/list.svg"}
               alt='Logo'
-              style={{ borderRadius: 20, height: 20, width: 20 }}
+              height={20}
+              width={20}
+              style={{ borderRadius: 20 }}
             />
           </button>
         </div>
 
-        <div style={{ display: isOpenMenu ? "grid" : "none", maxWidth:200, marginLeft:'auto' }}>
+        <div
+          style={{
+            display: isOpenMenu ? "grid" : "none",
+            maxWidth: 200,
+            marginLeft: "auto",
+          }}
+        >
           <button
             className={styles.btn}
             onClick={() => console.log("Ingresar")}
