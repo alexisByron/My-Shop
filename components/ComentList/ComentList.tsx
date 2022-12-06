@@ -90,7 +90,7 @@ export default function ComentList() {
                     {returnArrayByNumber(coment.valoracion).map(
                       (item, index) => (
                         <Image
-                          src='/icons/Estrella.png'
+                          src='/icons/estrella.png'
                           alt='estrella'
                           width={30}
                           height={30}
