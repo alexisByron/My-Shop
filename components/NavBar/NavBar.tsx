@@ -1,20 +1,42 @@
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
 import { motion } from "framer-motion";
 
+const useOutsideClick = (callback: { (): void; (): void }) => {
+  const ref = React.useRef();
+
+  React.useEffect(() => {
+    const handleClick = (event: any) => {
+      callback();
+    };
+
+    document.addEventListener("click", handleClick, true);
+
+    return () => {
+      document.removeEventListener("click", handleClick, false);
+    };
+  }, []);
+
+  return ref;
+};
+
 export default function NavBar({ backgroundColor }: any) {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  useOutsideClick(() => setIsOpenMenu(false));
+
   return (
     <div
       className={styles.topnav}
       id='myTopnav'
-      style={{ backgroundColor: backgroundColor }}
+      // style={{ backgroundColor: backgroundColor }}
     >
       <motion.div
         initial={{ x: 20 }}
         animate={{ x: 0 }}
         transition={{ duration: 3, type: "spring" }}
         className={styles.category}
-        style={{display:'flex'}}
+        style={{ display: "flex" }}
       >
         <img
           src={
@@ -22,21 +44,25 @@ export default function NavBar({ backgroundColor }: any) {
           }
           alt='Logo'
           className={styles.logo}
-          style={{borderRadius:20}}
+          style={{ borderRadius: 20 }}
         />
-         <motion.h1
-        style={{ minWidth: 150, paddingLeft: 10, margin: 0 }}
-        initial={{ x: 20 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 3, type: "spring" }}
-      >
-        <p style={{ fontSize: 20, textAlign: "center", margin: 0 }}>
-          Distribuidora
-        </p>
-        EL Muñeco
-      </motion.h1>
+        <motion.h1
+          style={{
+            minWidth: 150,
+            paddingLeft: 10,
+            margin: 0,
+            color: "rgb(0, 1, 65)",
+          }}
+          initial={{ x: 20 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 3, type: "spring" }}
+        >
+          <p style={{ fontSize: 22, textAlign: "center", margin: 0 }}>
+            Distribuidora
+          </p>
+          EL Chamakito brr
+        </motion.h1>
       </motion.div>
-     
 
       <motion.div
         initial={{ x: -20 }}
@@ -48,24 +74,53 @@ export default function NavBar({ backgroundColor }: any) {
           Inicio
         </Link>
 
-        <Link className={styles.categoryText} href={"/productos"}>
+        {/* <Link className={styles.categoryText} href={"/productos"}>
           Productos
         </Link>
+        */}
+        <div className={styles.containerBtnLoginRegister}>
+          <button
+            className={styles.btn}
+            onClick={() => console.log("Ingresar")}
+          >
+            Ingresar
+          </button>
+          <button
+            className={styles.btn}
+            onClick={() => console.log("Registrarme")}
+          >
+            Registrarme
+          </button>
+        </div>
 
-        <button className={styles.btn} onClick={() => console.log("Ingresar")}>
-          Ingresar
-        </button>
-        <button
-          className={styles.btn}
-          onClick={() => console.log("Registrarme")}
-        >
-          Registrarme
-        </button>
+        <div className={styles.containerBtn}>
+          <button
+            className={styles.btn}
+            onClick={() => setIsOpenMenu(!isOpenMenu)}
+          >
+            <img
+              src={"/icons/list.svg"}
+              alt='Logo'
+              style={{ borderRadius: 20, height: 20, width: 20 }}
+            />
+          </button>
+        </div>
+
+        <div style={{ display: isOpenMenu ? "grid" : "none", maxWidth:200, marginLeft:'auto' }}>
+          <button
+            className={styles.btn}
+            onClick={() => console.log("Ingresar")}
+          >
+            Ingresar
+          </button>
+          <button
+            className={styles.btn}
+            onClick={() => console.log("Registrarme")}
+          >
+            Registrarme
+          </button>
+        </div>
       </motion.div>
-
-      <a className='icon'>
-        <i className='fa fa-bars'></i>
-      </a>
     </div>
   );
 }

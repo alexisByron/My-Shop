@@ -2,9 +2,10 @@ import styles from "./Home.module.css";
 
 export default function Footer(){
     return    <footer className={styles.footer} style={{ fontSize: 14 }}>
-    <div style={{ display: "flex", color: "black" }}>
-      <div >
-        <h4 style={{ fontSize: 16, color:'black' }}>Informacion de contacto</h4>
+    <div className={styles.container}>
+      <div style={{display:'flex'}}>
+      <div>
+        <h4 style={{ fontSize: 16 }}>Informacion de contacto</h4>
         <ul>
           <span style={{ fontSize: 14 }}>+56 2 2603 7074</span>
         </ul>
@@ -20,7 +21,7 @@ export default function Footer(){
       </div>
 
       <div style={{ marginLeft: 40 }}>
-        <h4 style={{ fontSize: 16, color:'black' }}>Dirección</h4>
+        <h4 style={{ fontSize: 16 }}>Dirección</h4>
         <ul>
           <span>Lucila Godoy 374, Quilicura, Santiago</span>
         </ul>
@@ -28,23 +29,27 @@ export default function Footer(){
           <span>Ubicacion en mapa</span>
         </ul>
       </div>
-
-      <ul>
+      </div>
+      <div style={{display:'flex'}}>
+     <div style={{display:'flex'}}>
+     <ul>
         <img src='/icons/insta.svg' alt='elMuñecoInstagram' />
       </ul>
       <ul>
         <img src='/icons/facebook.svg' alt='elMuñecoFacebook' />
       </ul>
-      <ul>
+     </div>
+      <ul style={{ maxHeight: 100, maxWidth: 150 }}>
         <img
           src={
             "https://www.elmuneco.cl/wp-content/uploads/2019/05/el-muñeco-distribuidora-logo.png"
           }
           alt='Logo'
-          style={{ height: 100, width: 250 }}
+          style={{ maxHeight: 100, maxWidth: 150 }}
           // className={styles.logo}
         />
       </ul>
+    </div>
     </div>
   </footer>
 }

@@ -1,9 +1,8 @@
 .topnav {
-  background-color:gray;
+  background-color: rgb(162, 245, 245);
   flex-direction: row;
   display: flex;
-  padding: 0.5rem 2rem 2rem 2rem;
-  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
+  padding: 1rem 0rem 2rem 0rem;
 }
 
 .topnav h1 {
@@ -22,27 +21,55 @@
   text-align: end;
 }
 
-.categoryText{
-  color: white;
+.categoryText {
+  color: rgb(0, 1, 65);
   padding: 0rem 1rem 0rem 1rem;
-  /* text-decoration: none; */
-  /* font-size: 15px; */
-  /* justify-content: center; */
   position: relative;
   font-weight: 800;
 }
 
-.btn{
+.btn {
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.6);
-  background-color: white;
-  padding: 10px 20px 10px 20px;
-  /* height: 30px; */
-  /* width: 200px; */
-  color: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(62, 176, 184);
+  background-color: transparent;
+  padding: 5px 10px 5px 10px;
+  color: rgb(0, 1, 65);
+  box-shadow: 1px 3px 8px 2px rgba(62, 176, 184);
   margin-left: 5px;
   margin-right: 5px;
   position: relative;
   border-radius: 50px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.containerBtnLoginRegister {
+  display: contents;
+}
+
+.containerBtn {
+  display: none;
+  color: red;
+}
+
+@media (max-width: 899px) {
+  .containerBtnLoginRegister {
+    display: none;
+  }
+  .containerBtn {
+    display: inline;
+    color: red;
+  }
+  .topnav p {
+    font-size: 17px !important;
+  }
+  .topnav h1 {
+    font-size: 18px !important;
+  }
+
+  .logo {
+    width: 60px;
+    height: 50px;
+    position: relative;
+  }
 }

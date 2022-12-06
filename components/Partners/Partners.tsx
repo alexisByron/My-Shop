@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 export default function NavBar() {
   return (
-    <>
-      <h2 style={{ textAlign: "center", color: "rgba(33, 12, 51, 1)" }}>
+    <div style={{marginBottom:50}}>
+      <h2 style={{ textAlign: "center", color: "rgb(0, 1, 65)" }}>
         Comercios asociados
       </h2>
       <motion.div
@@ -34,6 +34,6 @@ export default function NavBar() {
           className={styles.img}
         />
       </motion.div>
-    </>
+    </div>
   );
 }

@@ -18,13 +18,13 @@ export default function Info() {
     {
       title: "Misión",
       description:
-        "Nuestro principal objetivo como empresa es ser su canal de comunicación y distribución entre los grandes proveedores y el comercio minorista o almaceneros. Nuestro Servicio de distribución es el canal óptimo para que los productos que los minoristas necesitan lleguen directamente a sus locales comerciales.",
+        "Nuestro principal objetivo como empresa es ser su canal de comunicación y distribución entre los grandes proveedores y el comercio minorista o almaceneros. Nuestro Servicio de distribución.",
       icon: "/icons/partner.png",
     },
     {
       title: "10 años de experiencia",
       description:
-        "Mas de 10 años de experiencia en el rubro de la distribución de productos de consumo masivo. Dando una experiencia de calidad a nuestros clientes. quienes año tras año nos prefieren por nuestra calidad de servicio y productos.",
+        "Mas de 10 años de experiencia en el rubro de la distribución de productos de consumo masivo. Dando una experiencia de calidad a nuestros clientes.",
       icon: "/icons/certificado.png",
     },
   ];

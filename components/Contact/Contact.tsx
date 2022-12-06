@@ -12,29 +12,29 @@ export default function Contact() {
   const onSubmit = (data: any) => console.log(data);
 
   return (
-    <div>
-      <h3 style={{ textAlign: "center", color: "rgba(33, 12, 51, 1)" }}>
-        Contacto
-      </h3>
+    <div className={styles.containerForm}>
+      <h3 style={{ textAlign: "center", color: "rgb(0, 1, 65)" }}>Contacto</h3>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        style={{ display: "grid" }}
+        style={{ textAlign: "center", maxWidth: 700 }}
         className={styles.form}
       >
-        <div style={{ justifySelf: "center", marginTop: 5 }}>
+        <div className={styles.rowContactField}>
           {/* register your input into the hook by invoking the "register" function */}
           <input
             {...register("example2")}
             placeholder='Nombre'
             style={{
-              width: 340,
+              width: "100%",
+              // maxWidth: 340,
               height: 50,
               padding: 10,
               marginRight: 10,
-              background: "#f1ebea",
+              background: "rgb(0, 1, 65)",
               borderRadius: 30,
               border: "none",
-              color:'black'
+              color: "rgba(62, 176, 184)",
+              marginBottom: 5,
             }}
           />
 
@@ -43,32 +43,35 @@ export default function Contact() {
             {...register("exampleRequired2", { required: true })}
             placeholder='Empresa'
             style={{
-              width: 340,
+              width: "100%",
               height: 50,
               padding: 10,
               marginRight: 10,
-              background: "#f1ebea",
+              background: "rgb(0, 1, 65)",
               borderRadius: 30,
               border: "none",
-              color:'black'
+              color: "rgba(62, 176, 184)",
+              marginBottom: 5,
             }}
           />
           {/* errors will return when field validation fails  */}
         </div>
-        <div style={{ justifySelf: "center", marginTop: 5 }}>
+
+        <div className={styles.rowContactField}>
           {/* register your input into the hook by invoking the "register" function */}
           <input
             {...register("example2")}
             placeholder='Telefono'
             style={{
-              width: 340,
+              width: "100%",
               height: 50,
               padding: 10,
               marginRight: 10,
-              background: "#f1ebea",
+              background: "rgb(0, 1, 65)",
               borderRadius: 30,
               border: "none",
-              color:'black'
+              color: "rgba(62, 176, 184)",
+              marginBottom: 5,
             }}
           />
 
@@ -77,32 +80,34 @@ export default function Contact() {
             {...register("exampleRequired2", { required: true })}
             placeholder='Correo Electronico'
             style={{
-              width: 340,
+              width: "100%",
+              // maxWidth: 340,
               height: 50,
               padding: 10,
               marginRight: 10,
-              background: "#f1ebea",
+              background: "rgb(0, 1, 65)",
               borderRadius: 30,
               border: "none",
-              color:'black'
+              color: "rgba(62, 176, 184)",
+              marginBottom: 5,
             }}
           />
           {/* errors will return when field validation fails  */}
         </div>
 
         <div style={{ justifySelf: "center", marginTop: 5 }}>
-          {/* include validation with required or other standard HTML validation rules */}
           <textarea
             {...register("exampleRequired3", { required: true })}
             placeholder='Escribe cualquier duda que tengas, estamos para ayudarte..........'
             style={{
-              width: 700,
+              width: "100%",
+              maxWidth: 700,
               height: 200,
               padding: 10,
-              background: "#f1ebea",
+              background: "rgb(0, 1, 65)",
               borderRadius: 30,
               border: "none",
-              color:'black'
+              color: "rgba(62, 176, 184)",
             }}
           />
         </div>
@@ -113,13 +118,13 @@ export default function Contact() {
             padding: 10,
             margin: "auto",
             marginTop: 20,
-            background: "#f1ebea",
-            color: "black",
+            background: "rgb(0, 1, 65)",
+            color: "rgba(62, 176, 184)",
             border: "none",
-            boxShadow: "3px 6px 6px 3px rgb(0 0 0 / 60%)",
+            boxShadow: "1px 1px 5px 1px rgba(43, 184, 184)",
             borderRadius: 30,
-            width: 400,
-            height:50
+            minWidth: 400,
+            height: 50,
           }}
         />
       </form>
