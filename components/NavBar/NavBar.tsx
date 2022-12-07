@@ -61,7 +61,7 @@ export default function NavBar({ backgroundColor }: any) {
           transition={{ duration: 3, type: "spring" }}
         >
           <p style={{ fontSize: 22, textAlign: "center", margin: 0 }}>
-            Distribuidora xd.
+            Distribuidora
           </p>
           EL Chamakito brr
         </motion.h1>
