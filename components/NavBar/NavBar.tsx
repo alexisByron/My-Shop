@@ -63,7 +63,7 @@ export default function NavBar({ backgroundColor }: any) {
           <p style={{ fontSize: 22, textAlign: "center", margin: 0 }}>
             Distribuidora
           </p>
-          EL Chamakito brr
+          Chamakito brr
         </motion.h1>
       </motion.div>
 
