@@ -11,6 +11,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Analytics } from '@vercel/analytics/react';
 
+export function AnalyticsWrapper() {
+  return <Analytics />;
+}
+
 export default function Home() {
   return (
     <div className={styles.fullContainer}>
@@ -146,7 +150,7 @@ export default function Home() {
         </>
       </div>
       <Footer />
-      <Analytics />
+      <AnalyticsWrapper />
     </div>
   );
 }
