@@ -9,6 +9,7 @@ import Footer from "../components/Footer/Footer";
 import ComentList from "../components/ComentList/ComentList";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
   return (
@@ -145,6 +146,7 @@ export default function Home() {
         </>
       </div>
       <Footer />
+      <Analytics />
     </div>
   );
 }
