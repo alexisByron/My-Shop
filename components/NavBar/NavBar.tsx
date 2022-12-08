@@ -82,18 +82,20 @@ export default function NavBar({ backgroundColor }: any) {
         </Link>
         */}
         <div className={styles.containerBtnLoginRegister}>
-          <button
+          <Link
+            href={"/login"}
+            className={styles.btn}
+          >
+            Ingresar
+          </Link>
+
+          <Link
+            href={"/"}
             className={styles.btn}
             onClick={() => console.log("Ingresar")}
           >
-            Ingresar
-          </button>
-          <button
-            className={styles.btn}
-            onClick={() => console.log("Registrarme")}
-          >
             Registrarme
-          </button>
+          </Link>
         </div>
 
         <div className={styles.containerBtn}>
