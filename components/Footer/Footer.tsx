@@ -9,23 +9,23 @@ export default function Footer() {
           <div>
             <h4 style={{ fontSize: 16 }}>Informacion de contacto</h4>
             <ul>
-              <span style={{ fontSize: 14 }}>+56 2 2603 7074</span>
+              <span style={{ fontSize: 14 }}>+56 2 0000 7074</span>
             </ul>
             <ul>
               <span>+56 2 2627 4855</span>
             </ul>
             <ul>
-              <span>+56 2 2603 5602</span>
+              <span>+56 2 0000 5602</span>
             </ul>
             <ul>
-              <span>info@elmuneco.cl</span>
+              <span>info@chamakitovinos.cl</span>
             </ul>
           </div>
 
           <div style={{ marginLeft: 40 }}>
             <h4 style={{ fontSize: 16 }}>Dirección</h4>
             <ul>
-              <span>Lucila Godoy 374, Quilicura, Santiago</span>
+              <span>Mi casita 420, Quilicura, Santiago</span>
             </ul>
             <ul>
               <span>Ubicacion en mapa</span>
@@ -52,14 +52,7 @@ export default function Footer() {
             </ul>
           </div>
           <ul style={{ maxHeight: 100, maxWidth: 150 }}>
-            <Image
-              src={
-                "https://www.elmuneco.cl/wp-content/uploads/2019/05/el-muñeco-distribuidora-logo.png"
-              }
-              alt='Logo'
-              width={150}
-              height={80}
-            />
+            <Image src={"/icons/logo.png"} alt='Logo' width={150} height={80} />
           </ul>
         </div>
       </div>

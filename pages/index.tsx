@@ -9,7 +9,7 @@ import Footer from "../components/Footer/Footer";
 import ComentList from "../components/ComentList/ComentList";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 export function AnalyticsWrapper() {
   return <Analytics />;
@@ -42,7 +42,7 @@ export default function Home() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 3, type: "spring" }}
                 >
-                  Distribuidora El Chamakito Brr
+                  Distribuidora Vinos El Chamakito Brr
                 </motion.h1>
                 <motion.div
                   style={{ display: "flex", position: "relative" }}
@@ -60,7 +60,7 @@ export default function Home() {
                       margin: "0px 5px 0px 5px",
                     }}
                   />
-                  <h3>+56 2 2603 7074</h3>
+                  <h3>+56 2 0000 7074</h3>
                 </motion.div>
                 <motion.div
                   style={{ display: "flex", position: "relative" }}
@@ -79,7 +79,7 @@ export default function Home() {
                     }}
                   />
 
-                  <h3>Lucila Godoy 374, Quilicura, Santiago</h3>
+                  <h3>Mi casita 420, Quilicura, Santiago</h3>
                 </motion.div>
                 <motion.div
                   style={{ display: "flex", position: "relative" }}
@@ -98,7 +98,7 @@ export default function Home() {
                     }}
                   />
 
-                  <h3>+56 2 2603 5602</h3>
+                  <h3>+56 2 0000 5602</h3>
                 </motion.div>
                 <motion.div
                   style={{ display: "flex", position: "relative" }}
