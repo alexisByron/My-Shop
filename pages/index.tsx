@@ -134,7 +134,7 @@ export default function Home() {
                     className={styles.btn}
                     onClick={() => console.log("Ingresar")}
                   >
-                    Contactanos Ahora
+                    Contáctenos Ahora
                   </button>
                 </motion.div>
               </div>

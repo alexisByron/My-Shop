@@ -7,7 +7,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div style={{ display: "flex" }}>
           <div>
-            <h4 style={{ fontSize: 16 }}>Informacion de contacto</h4>
+            <h4 style={{ fontSize: 16 }}>Información de contacto</h4>
             <ul>
               <span style={{ fontSize: 14 }}>+56 2 0000 7074</span>
             </ul>
@@ -28,7 +28,7 @@ export default function Footer() {
               <span>Mi casita 420, Quilicura, Santiago</span>
             </ul>
             <ul>
-              <span>Ubicacion en mapa</span>
+              <span>Ubicación en mapa</span>
             </ul>
           </div>
         </div>

@@ -14,6 +14,7 @@ export default function Home() {
   const onSubmit = (data: any) => console.log(data);
   const [typeForm, setTypeForm] = useState("login");
 
+
   const FormLogin = () => (
     <motion.div
       initial={{ opacity: 0, transform: "rotate3d(0, 1, 0, 180deg)" }}
@@ -52,7 +53,7 @@ export default function Home() {
 
           <input
             {...register("contrasena", { required: true })}
-            placeholder='Constraseña'
+            placeholder='Contraseña'
             className={styles.input}
           />
           <p className={styles.recoverPass}>Olvide mi contraseña</p>
@@ -88,7 +89,7 @@ export default function Home() {
       transition={{ duration: 1, type: "spring", stiffness: 20 }}
       className={styles.formContainer}
     >
-      <h1 className={styles.title}>Registrate a Chamakito Brr</h1>
+      <h1 className={styles.title}>Regístrate a Chamakito Brr</h1>
       <motion.img
         key={"/icons/logo.png"}
         src={"/icons/logo.png"}
@@ -119,17 +120,17 @@ export default function Home() {
           />
           <input
             {...register("direccion")}
-            placeholder='direccion'
+            placeholder='Dirección'
             className={styles.input}
           />
           <input
             {...register("contrasena", { required: true })}
-            placeholder='Constraseña'
+            placeholder='Contraseña'
             className={styles.input}
           />
           <input
             {...register("contrasena2", { required: true })}
-            placeholder='Confirme constraseña'
+            placeholder='Confirme Contraseña'
             className={styles.input}
           />
           <p className={styles.recoverPass}>Olvide mi contraseña</p>

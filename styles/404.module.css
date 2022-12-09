@@ -1,0 +1,17 @@
+
+.container{
+    height: 100%;
+    width: 100%;
+    max-width: 2000px;
+    max-height: 2000px;
+    background-image: url('https://photo-cdn2.icons8.com/dqQuWoYnonoGYoeFOSubBXlp6ArD0HSS4EeMfd9HPiQ/rs:fit:1608:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi8xZTczNzk2MTI3/OGQ0MjYyYjRjOGJm/OGU2NzI2ZTZmNy5q/cGc.jpg');
+    text-align: center;
+    position: absolute;
+}
+
+.content{
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    height: 100%;
+}
