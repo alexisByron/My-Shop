@@ -27,11 +27,7 @@ export default function NavBar({ backgroundColor }: any) {
   useOutsideClick(() => setIsOpenMenu(false));
 
   return (
-    <div
-      className={styles.topnav}
-      id='myTopnav'
-      // style={{ backgroundColor: backgroundColor }}
-    >
+    <div className={styles.topnav} id='myTopnav'>
       <motion.div
         initial={{ x: 20 }}
         animate={{ x: 0 }}
@@ -40,9 +36,7 @@ export default function NavBar({ backgroundColor }: any) {
         style={{ display: "flex" }}
       >
         <Image
-          src={
-            "https://img.freepik.com/vector-gratis/aplicacion-mercado-digital-negocio-remoto-comercio-electronico-tienda-internet-mercado-movil-cliente-personaje-dibujos-animados-telefono-inteligente-ilustracion-metafora-concepto-aislado-vector_335657-2762.jpg?w=1380&t=st=1669170657~exp=1669171257~hmac=ee596ca525af6ab1db1e2effcfb20ce243966e26043c01a81765b7ce05661551"
-          }
+          src={"/icons/logo.png"}
           alt='Logo'
           width={80}
           height={80}
@@ -54,14 +48,14 @@ export default function NavBar({ backgroundColor }: any) {
             minWidth: 150,
             paddingLeft: 10,
             margin: 0,
-            color: "rgb(0, 1, 65)",
+            color: "rgba(62, 176, 184)",
           }}
           initial={{ x: 20 }}
           animate={{ x: 0 }}
           transition={{ duration: 3, type: "spring" }}
         >
           <p style={{ fontSize: 22, textAlign: "center", margin: 0 }}>
-            Distribuidora
+            Distribuidora Vinos
           </p>
           Chamakito brr
         </motion.h1>
@@ -77,20 +71,13 @@ export default function NavBar({ backgroundColor }: any) {
           Inicio
         </Link>
 
-        {/* <Link className={styles.categoryText} href={"/productos"}>
-          Productos
-        </Link>
-        */}
         <div className={styles.containerBtnLoginRegister}>
-          <Link
-            href={"/login"}
-            className={styles.btn}
-          >
+          <Link href={"/login"} className={styles.btn}>
             Ingresar
           </Link>
 
           <Link
-            href={"/"}
+            href={"/login"}
             className={styles.btn}
             onClick={() => console.log("Ingresar")}
           >
@@ -120,18 +107,13 @@ export default function NavBar({ backgroundColor }: any) {
             marginLeft: "auto",
           }}
         >
-          <button
-            className={styles.btn}
-            onClick={() => console.log("Ingresar")}
-          >
+          <Link href={"/login"} className={styles.btn}>
             Ingresar
-          </button>
-          <button
-            className={styles.btn}
-            onClick={() => console.log("Registrarme")}
-          >
+          </Link>
+
+          <Link href={"/login"} className={styles.btn}>
             Registrarme
-          </button>
+          </Link>
         </div>
       </motion.div>
     </div>
