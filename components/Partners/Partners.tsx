@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function NavBar() {
   return (
     <div style={{marginBottom:50}}>
-      <h2 style={{ textAlign: "center", color: "rgb(0, 1, 65)" }}>
+      <h2 style={{ textAlign: "center", color: "rgb(81, 64, 21)" }}>
         Comercios asociados
       </h2>
       <motion.div

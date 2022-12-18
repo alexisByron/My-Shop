@@ -1,13 +1,17 @@
 @import url("https://fonts.google.com/specimen/Source+Sans+Pro");
+@import url("https://fonts.gstatic.com");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-  font-family: "Sans-Pro";
+  font-family: "Indie Flower","Sans-Pro";
   font-style: italic;
+}
+
+button, input, textarea {
+  font-family: "Indie Flower","Sans-Pro";
 }
 
 h1,
@@ -21,7 +25,8 @@ p {
   margin: 0px;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: rgba(62, 176, 184);
+  color: rgba(243, 220, 174);
+  
 }
 
 ul{

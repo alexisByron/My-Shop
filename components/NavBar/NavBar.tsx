@@ -48,7 +48,7 @@ export default function NavBar({ backgroundColor }: any) {
             minWidth: 150,
             paddingLeft: 10,
             margin: 0,
-            color: "rgba(62, 176, 184)",
+            color: "rgba(243, 220, 174)",
           }}
           initial={{ x: 20 }}
           animate={{ x: 0 }}

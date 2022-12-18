@@ -33,7 +33,7 @@ export default function Home() {
                 display: "flex",
                 padding: "0px 40px 0px 40px",
                 maxHeight: 600,
-                color: "rgb(0, 1, 65)",
+                color: "rgb(81, 64, 21)",
               }}
             >
               <div className={styles.ContainerInfoHeader}>

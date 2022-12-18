@@ -12,19 +12,19 @@ export default function Info() {
     {
       title: "Descuentos exclusivos",
       description:
-        "Al ser cliente habitual recibiras descuentos exclusivos en tus compras. solo debes registrarte y listo.",
+        "Al ser cliente habitual recibirás descuentos exclusivos en tus compras. solo debes registrarte y listo.",
       icon: "/icons/discount.png",
     },
     {
       title: "Misión",
       description:
-        "Nuestro principal objetivo como empresa es ser su canal de comunicación y distribución entre los grandes proveedores y el comercio minorista o almaceneros. Nuestro Servicio de distribución.",
+        "Nuestro principal objetivo como empresa es ser su proveedor principal tanto para negocios como para consumo",
       icon: "/icons/partner.png",
     },
     {
       title: "10 años de experiencia",
       description:
-        "Mas de 10 años de experiencia en el rubro de la distribución de productos de consumo masivo. Dando una experiencia de calidad a nuestros clientes.",
+        "Mas de 10 años de experiencia en el rubro de la distribución de los mejores vinos. brindando a nuestros clientes la mejor atencion",
       icon: "/icons/certificado.png",
     },
   ];

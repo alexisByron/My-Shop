@@ -57,7 +57,6 @@ export default function Home() {
           />
           <p className={styles.recoverPass}>Olvide mi contraseña</p>
         </div>
-
         <div className={styles.ButtonFormContainer}>
           <input
             type='submit'
@@ -106,7 +105,7 @@ export default function Home() {
         style={{ textAlign: "center" }}
         className={styles.form}
       >
-        <div className={styles.gridInputs}>
+        <div className={styles.gridInputs} style={{marginBottom:15}}>
           <input
             {...register("correo")}
             placeholder='Email'
@@ -115,11 +114,6 @@ export default function Home() {
           <input
             {...register("usuario")}
             placeholder='Usuario'
-            className={styles.input}
-          />
-          <input
-            {...register("direccion")}
-            placeholder='direccion'
             className={styles.input}
           />
           <input
@@ -132,7 +126,6 @@ export default function Home() {
             placeholder='Confirme constraseña'
             className={styles.input}
           />
-          <p className={styles.recoverPass}>Olvide mi contraseña</p>
         </div>
 
         <div className={styles.ButtonFormContainer}>
@@ -158,6 +151,7 @@ export default function Home() {
 
   return (
     <div className={styles.fullContainer}>
+      <div className={styles.container_100}>
       <div className={styles.containerLogin}>
         <div className={styles.pictureContainer}>
           <motion.div
@@ -171,12 +165,8 @@ export default function Home() {
             <motion.img
               key={"/icons/logo.png"}
               src={"/icons/logo.png"}
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1, transition: { duration: 1 } }}
-              whileHover={{
-                scale: 1.2,
-                transition: { duration: 1 },
-              }}
+              initial={{ scale: 0.4 }}
+              animate={{ scale: 0.6, transition: { duration: 1 } }}
               exit={{ opacity: 0 }}
               className={styles.pictureLogo}
             />
@@ -188,6 +178,7 @@ export default function Home() {
           </motion.div>
         </div>
         {typeForm === "login" ? <FormLogin /> : <FormRegister />}
+      </div>
       </div>
     </div>
   );
