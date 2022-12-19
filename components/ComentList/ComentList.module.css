@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  animation: carouselAnim 20s infinite both;
+  animation-delay: 3s;
+}
+
+.items {
+  display: grid;
+  align-items: center;
+  min-width: 500px;
+  margin: 10px;
+  padding: 15px;
+  background-color: rgb(81, 64, 21);
+  border-radius: 30px;
+  box-shadow: 1px 1px 5px 1px rgba(81, 64, 21);
+  border: 1px solid rgba(81, 64, 21);
+  color: black;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  width: 600;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 300px;
+  background: #fff;
+  margin: 1em;
+  padding: 0.5em;
+  border-radius: 10px;
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    animation-delay: 10000s;
+  }
+  .items {
+    max-width: 50px;
+    height: 100%;
+    background-color: rgb(81, 64, 21);
+    animation: carouselAnim2 20s infinite both;
+    animation-delay: 3s;
+    min-width: 300px;
+  }
+
+  @keyframes carouselAnim2 {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(-315%);
+    }
+  }
+}
+
+.entry p {
+  text-align: center;
+  padding: 1em;
+}
+
+.name {
+  font-weight: bold;
+}
+
+@keyframes carouselAnim {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-90%);
+  }
+}

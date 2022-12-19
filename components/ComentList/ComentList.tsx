@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
+import styles from "/Users/alexismoya/Desktop/my-next-app/components/ComentList/ComentList.module.css";
+import React from "react";
 
 export default function ComentList() {
   const [coments, setComents] = useState([
@@ -33,13 +35,13 @@ export default function ComentList() {
         "Excelente servicio, muy buenos productos, muy recomendado aunque un poco caro creo que podrian bajar un poco los precios",
       valoracion: 3.5,
     },
-    {
-      name: "Pedro Perez",
-      Shopname: "Tienda de pedro",
-      coment:
-        "Excelente servicio, muy buenos productos, muy recomendado aunque un poco caro creo que podrian bajar un poco los precios",
-      valoracion: 5,
-    },
+    // {
+    //   name: "Pedro Perez",
+    //   Shopname: "Tienda de pedro",
+    //   coment:
+    //     "Excelente servicio, muy buenos productos, muy recomendado aunque un poco caro creo que podrian bajar un poco los precios",
+    //   valoracion: 5,
+    // },
   ]);
 
   const returnArrayByNumber = (valoracion: number) => {
@@ -47,16 +49,12 @@ export default function ComentList() {
   };
 
   return (
-    <div>
-      <h1 style={{ color: "rgb(81, 64, 21)", textAlign: "center" }}>
-        La opion de nuestros clientes es importante
+    <>
+    <h1 style={{ color: "rgb(81, 64, 21)", textAlign: "center" }}>
+        Los Comentarios de nuestros clientes nos interesan
       </h1>
-      <div
-        style={{
-          display: "flex",
-          overflow: "auto",
-        }}
-      >
+    <div style={{overflow:'auto'}}>
+      <div className={styles.container}>
         {coments.map((coment, index) => {
           return (
             <motion.div
@@ -64,28 +62,11 @@ export default function ComentList() {
               initial={{ x: -400 * index }}
               animate={{ x: 0 }}
               transition={{ duration: 5, type: "spring" }}
-              style={{
-                width: 500,
-                margin: 10,
-                height: 200,
-                padding: 10,
-                backgroundColor: "rgb(81, 64, 21)",
-                borderRadius: 20,
-                boxShadow: "1px 1px 5px 1px rgba(81, 64, 21)",
-                border: "1px solid rgba(81, 64, 21)",
-                color: "black",
-              }}
+              className={styles.items}
             >
-              <div
-                key={index}
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: 400,
-                }}
-              >
+              <div key={index} className={styles.card}>
                 <h3 style={{ color: "rgba(243, 220, 174)" }}>{coment.name}</h3>
-                <div>
+                <div >
                   <>
                     {returnArrayByNumber(coment.valoracion).map(
                       (item, index) => (
@@ -112,22 +93,13 @@ export default function ComentList() {
                 </div>
               </div>
               <p style={{ color: "rgba(243, 220, 174)" }}>{coment.Shopname}</p>
-              <div
-                style={{
-                  display: "flex",
-                  width: 400,
-                  wordBreak: "break-word",
-                  position: "initial",
-                }}
-              >
-                <p style={{ width: 400, color: "rgba(243, 220, 174)" }}>
-                  {coment.coment}
-                </p>
+              <div>
+                <p style={{ color: "rgba(243, 220, 174)" }}>{coment.coment}</p>
               </div>
             </motion.div>
           );
         })}
       </div>
-    </div>
+    </div></>
   );
 }

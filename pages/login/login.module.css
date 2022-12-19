@@ -54,8 +54,6 @@
   justify-items: center;
   border-radius: 0px 50px 50px 0px;
   align-content: space-evenly;
-  perspective: 80px;
-  perspective-origin: 500% 200%;
 }
 
 .form {

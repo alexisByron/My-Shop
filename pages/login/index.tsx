@@ -121,19 +121,21 @@ export default function Home() {
       <motion.div
         initial={
           isChanging
-            ? { opacity: 0, transform: "rotate3d(0, 1, 0, 100deg)" }
+            ? {
+                opacity: 0,
+                transform: "rotateY(100deg)",
+              }
             : {}
         }
         animate={{
-          transform: "rotate3d(0, 1, 0, 0deg)",
+          transform: "rotateY(0deg)",
           opacity: 1,
         }}
-        transition={{ duration: 1, type: "spring", stiffness: 20 }}
+        transition={{ stiffness: 27, type: "spring" }}
         className={styles.formContainer}
-        onAnimationComplete={(x) => console.log("era", x)}
       >
         <h1 className={styles.title}>
-          Ingresa a la mejor tienda de vinos <br/>  El Chamakito brrr
+          Ingresa a la mejor tienda de vinos <br /> El Chamakito brrr
         </h1>
         <motion.img
           key={"/icons/logo.png"}
@@ -205,16 +207,23 @@ export default function Home() {
   const FormRegister = () => (
     <motion.div
       initial={
-        isChanging ? { opacity: 0, transform: "rotate3d(0, 1, 0, 100deg)" } : {}
+        isChanging
+          ? {
+              opacity: 0,
+              transform: "rotateY(100deg)",
+            }
+          : {}
       }
       animate={{
-        transform: "rotate3d(0, 1, 0, 0deg)",
+        transform: "rotateY(0deg)",
         opacity: 1,
       }}
-      transition={{ duration: 1, type: "spring", stiffness: 20 }}
+      transition={{ stiffness: 27, type: "spring" }}
       className={styles.formContainer}
     >
-      <h1 className={styles.title}>Regístrate a la mejor tienda de vinos <br/>  El Chamakito brrr</h1>
+      <h1 className={styles.title}>
+        Regístrate a la mejor tienda de vinos <br /> El Chamakito brrr
+      </h1>
       <motion.img
         key={"/icons/logo.png"}
         src={"/icons/logo.png"}
