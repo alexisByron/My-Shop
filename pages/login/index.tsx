@@ -2,10 +2,7 @@ import styles from "./login.module.css";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/user/userReducer";
 import { useRouter } from "next/router";
@@ -135,7 +132,9 @@ export default function Home() {
         className={styles.formContainer}
         onAnimationComplete={(x) => console.log("era", x)}
       >
-        <h1 className={styles.title}>Regístrate a Chamakito Brr</h1>
+        <h1 className={styles.title}>
+          Ingresa a la mejor tienda de vinos <br/>  El Chamakito brrr
+        </h1>
         <motion.img
           key={"/icons/logo.png"}
           src={"/icons/logo.png"}
@@ -215,7 +214,7 @@ export default function Home() {
       transition={{ duration: 1, type: "spring", stiffness: 20 }}
       className={styles.formContainer}
     >
-      <h1 className={styles.title}>Regístrate a Chamakito Brr</h1>
+      <h1 className={styles.title}>Regístrate a la mejor tienda de vinos <br/>  El Chamakito brrr</h1>
       <motion.img
         key={"/icons/logo.png"}
         src={"/icons/logo.png"}
