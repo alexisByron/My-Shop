@@ -93,10 +93,17 @@
   margin-right: 10px;
   background-color: rgb(81, 64, 21);
   border-radius: 30px;
-  border: none;
+  /* border: none; */
   color: rgba(243, 220, 174);;
   margin-bottom: 10px;
   font-size: 20px;
+}
+
+.ButtonFormRegister2{
+  background-color: transparent;
+  color: rgb(243, 220, 174);
+  border-color: rgba(243, 220, 174);
+  border: 1px solid;
 }
 
 .recoverPass {

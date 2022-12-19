@@ -3,16 +3,55 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../../redux/user/userReducer";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const params = router.query;
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data: any) => console.log(data);
-  const [typeForm, setTypeForm] = useState("login");
+
+  const onSubmitLogin = (data: any) => {
+    const userLoginResponse = {
+      name: "Juan",
+      lastName: "Perez",
+      usuario: data.usuario,
+      lastLogin: Date(),
+      correo: "Juan@Prueba.cl",
+      token: "123456789",
+    };
+
+    dispatch(login(userLoginResponse));
+    router.push("/");
+  };
+
+  const onSubmitRegister = (data: any) => {
+    const userLoginResponse = {
+      name: data.nombre,
+      lastName: data.apellido,
+      usuario: data.nombre + data.apellido,
+      correo: data.correo,
+      lastLogin: Date(),
+      token: "123456789",
+    };
+    console.log(
+      "🚀 ~ file: index.tsx:40 ~ onSubmitRegister ~ userLoginResponse",
+      userLoginResponse
+    );
+
+    dispatch(login(userLoginResponse));
+    router.push("/");
+  };
+
+  const [typeForm, setTypeForm] = useState(params.page ?? "login");
+  const { user } = useSelector((state: any) => state);
+  const dispatch = useDispatch();
 
   const FormLogin = () => (
     <motion.div
@@ -38,7 +77,7 @@ export default function Home() {
         className={styles.pictureLogoResponsive}
       />
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmitLogin)}
         style={{ textAlign: "center" }}
         className={styles.form}
       >
@@ -54,6 +93,7 @@ export default function Home() {
             {...register("contrasena", { required: true })}
             placeholder='Constraseña'
             className={styles.input}
+            type='password'
           />
           <p className={styles.recoverPass}>Olvide mi contraseña</p>
         </div>
@@ -64,12 +104,15 @@ export default function Home() {
             value={"Ingresar"}
           />
           <button
-            className={styles.ButtonForm}
+            className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
             onClick={() => setTypeForm("register")}
           >
             Registrarme
           </button>
-          <Link href={"/"} className={styles.ButtonForm}>
+          <Link
+            href={"/"}
+            className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
+          >
             Continuar como invitado
           </Link>
         </div>
@@ -101,30 +144,43 @@ export default function Home() {
         className={styles.pictureLogoResponsive}
       />
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmitRegister)}
         style={{ textAlign: "center" }}
         className={styles.form}
       >
-        <div className={styles.gridInputs} style={{marginBottom:15}}>
+        <div className={styles.gridInputs} style={{ marginBottom: 15 }}>
+          <div style={{ display: "flex" }}>
+            <input
+              {...register("nombre")}
+              placeholder='nombre'
+              className={styles.input}
+              style={{ marginRight: 5 }}
+            />
+            <input
+              {...register("apellido")}
+              placeholder='apellido'
+              className={styles.input}
+              style={{ marginLeft: 5 }}
+            />
+          </div>
           <input
-            {...register("correo")}
+            {...register("correo", { required: true })}
             placeholder='Email'
             className={styles.input}
+            type='email'
           />
-          <input
-            {...register("usuario")}
-            placeholder='Usuario'
-            className={styles.input}
-          />
+
           <input
             {...register("contrasena", { required: true })}
             placeholder='Constraseña'
             className={styles.input}
+            type='password'
           />
           <input
             {...register("contrasena2", { required: true })}
             placeholder='Confirme constraseña'
             className={styles.input}
+            type='password'
           />
         </div>
 
@@ -135,13 +191,13 @@ export default function Home() {
             value={"Registrarme"}
           />
           <button
-            className={styles.ButtonForm}
+              className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
             onClick={() => setTypeForm("login")}
             disabled={typeForm === "login"}
           >
             Ingresar
           </button>
-          <Link href={"/"} className={styles.ButtonForm}>
+          <Link href={"/"}   className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}>
             Continuar como invitado
           </Link>
         </div>
@@ -152,33 +208,33 @@ export default function Home() {
   return (
     <div className={styles.fullContainer}>
       <div className={styles.container_100}>
-      <div className={styles.containerLogin}>
-        <div className={styles.pictureContainer}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{ duration: 1.5 }}
-            className={styles.pictureContent}
-          >
-            <motion.img
-              key={"/icons/logo.png"}
-              src={"/icons/logo.png"}
-              initial={{ scale: 0.4 }}
-              animate={{ scale: 0.6, transition: { duration: 1 } }}
-              exit={{ opacity: 0 }}
-              className={styles.pictureLogo}
-            />
+        <div className={styles.containerLogin}>
+          <div className={styles.pictureContainer}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+              }}
+              transition={{ duration: 1.5 }}
+              className={styles.pictureContent}
+            >
+              <motion.img
+                key={"/icons/logo.png"}
+                src={"/icons/logo.png"}
+                initial={{ scale: 0.4 }}
+                animate={{ scale: 0.6, transition: { duration: 1 } }}
+                exit={{ opacity: 0 }}
+                className={styles.pictureLogo}
+              />
 
-            <h1 className={styles.title}>
-              Al ingresar podrás tener acceso a super descuentos en los mejores
-              vinos.
-            </h1>
-          </motion.div>
+              <h1 className={styles.title}>
+                Al ingresar podrás tener acceso a super descuentos en los
+                mejores vinos.
+              </h1>
+            </motion.div>
+          </div>
+          {typeForm === "login" ? <FormLogin /> : <FormRegister />}
         </div>
-        {typeForm === "login" ? <FormLogin /> : <FormRegister />}
-      </div>
       </div>
     </div>
   );

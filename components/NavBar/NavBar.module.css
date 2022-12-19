@@ -19,6 +19,12 @@
   width: 100%;
   align-self: center;
   text-align: end;
+  display: flex;
+}
+
+.category2 {
+  justify-content: end;
+  align-items: center;
 }
 
 .categoryText {
@@ -44,7 +50,8 @@
 }
 
 .containerBtnLoginRegister {
-  display: contents;
+  display: flex;
+  align-items: center;
 }
 
 .containerBtn {
@@ -52,7 +59,14 @@
   color: red;
 }
 
+.containerMenuResponsive{
+  display: none;
+}
+
 @media (max-width: 899px) {
+  .containerMenuResponsive{
+    display: grid;
+  }
   .containerBtnLoginRegister {
     display: none;
   }
@@ -65,10 +79,21 @@
   .topnav h1 {
     font-size: 18px !important;
   }
-
   .logo {
     width: 60px;
     height: 50px;
     position: relative;
   }
+  .category{
+    display: grid;
+  }
 }
+
+@media (max-width: 358px) {
+  .topnav{
+    display: grid;
+    justify-content: center;
+  }
+}
+
+
