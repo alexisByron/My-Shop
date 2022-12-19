@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import {
   motion,
   AnimatePresence,
-  useMotionValue,
-  useMotionTemplate,
 } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/user/userReducer";
@@ -62,11 +60,6 @@ export default function Home() {
       }).fire(error);
     }
   }, [MySwal, error]);
-
-  const x = useMotionValue(100);
-
-  // transform.get() === transform(100px)
-  const transform = useMotionTemplate`opacity: 0, transform: "rotate3d(0, 1, 0, 100deg)`;
 
   const onSubmitLogin = () => {
     const data = getValues();
@@ -192,7 +185,7 @@ export default function Home() {
               className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
               onClick={(e) => {
                 e.preventDefault();
-                // setIsChanging(false);
+                setIsChanging(true);
                 setTypeForm("register");
               }}
             >
