@@ -1,23 +1,82 @@
 import styles from "./login.module.css";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useMotionTemplate,
+} from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/user/userReducer";
 import { useRouter } from "next/router";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export default function Home() {
   const router = useRouter();
   const params = router.query;
+  const [typeForm, setTypeForm] = useState(params.page ?? "login");
+  const dispatch = useDispatch();
+  const [error, setError] = useState(false);
+  const [isChanging, setIsChanging] = useState(true);
   const {
     register,
     handleSubmit,
     watch,
+    getValues,
     formState: { errors },
   } = useForm();
 
-  const onSubmitLogin = (data: any) => {
+  const MySwal: any = withReactContent(Swal);
+
+  const user = useSelector((state: any) => state);
+
+  useEffect(() => {
+    console.log("user", user);
+    if (user != undefined && user.token !== "") {
+      router.push("/");
+    }
+  });
+
+  MySwal.bindClickHandler();
+
+  useEffect(() => {
+    if (isChanging) {
+      setTimeout(() => {
+        setIsChanging(false);
+      }, 1000);
+    }
+  }, [isChanging]);
+
+  useEffect(() => {
+    if (error) {
+      MySwal.mixin({
+        icon: "error",
+        title: "Error en datos ingresados",
+        text: "Revisa la información ingresada",
+        didClose: () => {
+          setError(false);
+        },
+      }).fire(error);
+    }
+  }, [MySwal, error]);
+
+  const x = useMotionValue(100);
+
+  // transform.get() === transform(100px)
+  const transform = useMotionTemplate`opacity: 0, transform: "rotate3d(0, 1, 0, 100deg)`;
+
+  const onSubmitLogin = () => {
+    const data = getValues();
+    console.log(
+      "🚀 ~ file: index.tsx:41 ~ onSubmitLogin ~ data",
+      getValues(),
+      typeForm,
+      error
+    );
+
     const userLoginResponse = {
       name: "Juan",
       lastName: "Perez",
@@ -27,11 +86,20 @@ export default function Home() {
       token: "123456789",
     };
 
-    dispatch(login(userLoginResponse));
-    router.push("/");
+    const test = data.usuario.trim() === "" || data.contrasena.trim() === "";
+    if (test) {
+      setError(true);
+      console.log("error");
+      return;
+    } else {
+      console.log("userLoginResponse", userLoginResponse);
+      dispatch(login(userLoginResponse));
+      router.push("/");
+    }
   };
 
-  const onSubmitRegister = (data: any) => {
+  const onSubmitRegister = () => {
+    const data = getValues();
     const userLoginResponse = {
       name: data.nombre,
       lastName: data.apellido,
@@ -40,89 +108,113 @@ export default function Home() {
       lastLogin: Date(),
       token: "123456789",
     };
-    console.log(
-      "🚀 ~ file: index.tsx:40 ~ onSubmitRegister ~ userLoginResponse",
-      userLoginResponse
-    );
 
-    dispatch(login(userLoginResponse));
-    router.push("/");
+    const test =
+      data.nombre.trim() === "" ||
+      data.apellido.trim() === "" ||
+      data.correo.trim() === "" ||
+      data.contrasena2.trim() === "" ||
+      data.contrasena.trim() !== data.contrasena2.trim();
+    if (test) {
+      setError(true);
+      console.log("error");
+      return;
+    } else {
+      console.log("userLoginResponse", userLoginResponse);
+      dispatch(login(userLoginResponse));
+      router.push("/");
+    }
   };
 
-  const [typeForm, setTypeForm] = useState(params.page ?? "login");
-  const { user } = useSelector((state: any) => state);
-  const dispatch = useDispatch();
-
   const FormLogin = () => (
-    <motion.div
-      initial={{ opacity: 0, transform: "rotate3d(0, 1, 0, 180deg)" }}
-      animate={{
-        transform: "rotate3d(0, 1, 0, 0deg)",
-        opacity: 1,
-      }}
-      transition={{ duration: 1, type: "spring", stiffness: 20 }}
-      className={styles.formContainer}
-    >
-      <h1 className={styles.title}>Bienvenido a Chamakito Brr</h1>
-      <motion.img
-        key={"/icons/logo.png"}
-        src={"/icons/logo.png"}
-        initial={{ scale: 0.8 }}
-        animate={{ scale: 1, transition: { duration: 1 } }}
-        whileHover={{
-          scale: 1.2,
-          transition: { duration: 1 },
+    <AnimatePresence>
+      <motion.div
+        initial={
+          isChanging
+            ? { opacity: 0, transform: "rotate3d(0, 1, 0, 100deg)" }
+            : {}
+        }
+        animate={{
+          transform: "rotate3d(0, 1, 0, 0deg)",
+          opacity: 1,
         }}
-        exit={{ opacity: 0 }}
-        className={styles.pictureLogoResponsive}
-      />
-      <form
-        onSubmit={handleSubmit(onSubmitLogin)}
-        style={{ textAlign: "center" }}
-        className={styles.form}
+        transition={{ duration: 1, type: "spring", stiffness: 20 }}
+        className={styles.formContainer}
+        onAnimationComplete={(x) => console.log("era", x)}
       >
-        <div className={styles.gridInputs}>
-          {/* register your input into the hook by invoking the "register" function */}
-          <input
-            {...register("usuario")}
-            placeholder='Usuario'
-            className={styles.input}
-          />
-
-          <input
-            {...register("contrasena", { required: true })}
-            placeholder='Constraseña'
-            className={styles.input}
-            type='password'
-          />
-          <p className={styles.recoverPass}>Olvide mi contraseña</p>
-        </div>
-        <div className={styles.ButtonFormContainer}>
-          <input
-            type='submit'
-            className={styles.ButtonForm}
-            value={"Ingresar"}
-          />
-          <button
-            className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
-            onClick={() => setTypeForm("register")}
-          >
-            Registrarme
-          </button>
-          <Link
-            href={"/"}
-            className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
-          >
-            Continuar como invitado
-          </Link>
-        </div>
-      </form>
-    </motion.div>
+        <h1 className={styles.title}>Regístrate a Chamakito Brr</h1>
+        <motion.img
+          key={"/icons/logo.png"}
+          src={"/icons/logo.png"}
+          initial={{ scale: 0.8 }}
+          animate={{ scale: 1, transition: { duration: 1 } }}
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 1 },
+          }}
+          exit={{ opacity: 0 }}
+          className={styles.pictureLogoResponsive}
+        />
+        <form
+          // onSubmit={handleSubmit(onSubmitLogin)}
+          style={{ textAlign: "center" }}
+          className={styles.form}
+        >
+          <div className={styles.gridInputs}>
+            {" "}
+            {/* register your input into the hook by invoking the "register" function */}
+            <input
+              {...register("usuario")}
+              placeholder='Usuario'
+              className={styles.input}
+            />
+            <input
+              {...register("contrasena", { required: true })}
+              placeholder='Contraseña'
+              className={styles.input}
+              type='password'
+            />
+            <p className={styles.recoverPass}>Olvide mi contraseña</p>
+          </div>
+          <div className={styles.ButtonFormContainer}>
+            <button
+              // type='submit'
+              className={styles.ButtonForm}
+              // value={"Ingresar"}
+              onClick={(e) => {
+                e.preventDefault();
+                onSubmitLogin();
+              }}
+            >
+              Ingresar
+            </button>
+            <button
+              className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
+              onClick={(e) => {
+                e.preventDefault();
+                // setIsChanging(false);
+                setTypeForm("register");
+              }}
+            >
+              Registrarme
+            </button>
+            <Link
+              href={"/"}
+              className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
+            >
+              Continuar como invitado
+            </Link>
+          </div>
+        </form>
+      </motion.div>
+    </AnimatePresence>
   );
 
   const FormRegister = () => (
     <motion.div
-      initial={{ opacity: 0, transform: "rotate3d(0, 1, 0, -180deg)" }}
+      initial={
+        isChanging ? { opacity: 0, transform: "rotate3d(0, 1, 0, 100deg)" } : {}
+      }
       animate={{
         transform: "rotate3d(0, 1, 0, 0deg)",
         opacity: 1,
@@ -130,7 +222,7 @@ export default function Home() {
       transition={{ duration: 1, type: "spring", stiffness: 20 }}
       className={styles.formContainer}
     >
-      <h1 className={styles.title}>Registrate a Chamakito Brr</h1>
+      <h1 className={styles.title}>Regístrate a Chamakito Brr</h1>
       <motion.img
         key={"/icons/logo.png"}
         src={"/icons/logo.png"}
@@ -143,11 +235,7 @@ export default function Home() {
         exit={{ opacity: 0 }}
         className={styles.pictureLogoResponsive}
       />
-      <form
-        onSubmit={handleSubmit(onSubmitRegister)}
-        style={{ textAlign: "center" }}
-        className={styles.form}
-      >
+      <form style={{ textAlign: "center" }} className={styles.form}>
         <div className={styles.gridInputs} style={{ marginBottom: 15 }}>
           <div style={{ display: "flex" }}>
             <input
@@ -172,32 +260,42 @@ export default function Home() {
 
           <input
             {...register("contrasena", { required: true })}
-            placeholder='Constraseña'
+            placeholder='Contraseña'
             className={styles.input}
             type='password'
           />
           <input
             {...register("contrasena2", { required: true })}
-            placeholder='Confirme constraseña'
+            placeholder='Confirme contraseña'
             className={styles.input}
             type='password'
           />
         </div>
 
         <div className={styles.ButtonFormContainer}>
-          <input
-            type='submit'
-            className={styles.ButtonForm}
-            value={"Registrarme"}
-          />
           <button
-              className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
-            onClick={() => setTypeForm("login")}
-            disabled={typeForm === "login"}
+            className={styles.ButtonForm}
+            onClick={(e) => {
+              e.preventDefault();
+              onSubmitRegister();
+            }}
+          >
+            Registrarme
+          </button>
+          <button
+            className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
+            onClick={(e) => {
+              e.preventDefault();
+              setIsChanging(true);
+              setTypeForm("login");
+            }}
           >
             Ingresar
           </button>
-          <Link href={"/"}   className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}>
+          <Link
+            href={"/"}
+            className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
+          >
             Continuar como invitado
           </Link>
         </div>
