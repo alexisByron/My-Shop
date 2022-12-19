@@ -63,11 +63,6 @@ export default function Home() {
     }
   }, [MySwal, error]);
 
-  const x = useMotionValue(100);
-
-  // transform.get() === transform(100px)
-  const transform = useMotionTemplate`opacity: 0, transform: "rotate3d(0, 1, 0, 100deg)`;
-
   const onSubmitLogin = () => {
     const data = getValues();
     console.log(
@@ -192,7 +187,7 @@ export default function Home() {
               className={`${styles.ButtonForm} ${styles.ButtonFormRegister2}`}
               onClick={(e) => {
                 e.preventDefault();
-                // setIsChanging(false);
+                setIsChanging(true);
                 setTypeForm("register");
               }}
             >
