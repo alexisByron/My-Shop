@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
-import styles from "/Users/alexismoya/Desktop/my-next-app/components/ComentList/ComentList.module.css";
+import styles from "./ComentList.module.css";
 import React from "react";
 
 export default function ComentList() {

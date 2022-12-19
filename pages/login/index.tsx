@@ -122,14 +122,12 @@ export default function Home() {
         initial={
           isChanging
             ? {
-                opacity: 0,
                 transform: "rotateY(100deg)",
               }
             : {}
         }
         animate={{
           transform: "rotateY(0deg)",
-          opacity: 1,
         }}
         transition={{ stiffness: 27, type: "spring" }}
         className={styles.formContainer}
@@ -209,14 +207,12 @@ export default function Home() {
       initial={
         isChanging
           ? {
-              opacity: 0,
               transform: "rotateY(100deg)",
             }
           : {}
       }
       animate={{
         transform: "rotateY(0deg)",
-        opacity: 1,
       }}
       transition={{ stiffness: 27, type: "spring" }}
       className={styles.formContainer}
