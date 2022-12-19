@@ -13,7 +13,7 @@ export default function Contact() {
 
   return (
     <div className={styles.containerForm}>
-      <h3 style={{ textAlign: "center", color: "rgb(0, 1, 65)" }}>Contacto</h3>
+      <h1 style={{ textAlign: "center", color: "rgb(81, 64, 21)" }}>Contacto</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         style={{ textAlign: "center", maxWidth: 700 }}
@@ -30,10 +30,10 @@ export default function Contact() {
               height: 50,
               padding: 10,
               marginRight: 10,
-              background: "rgb(0, 1, 65)",
+              background: "rgb(81, 64, 21)",
               borderRadius: 30,
               border: "none",
-              color: "rgba(62, 176, 184)",
+              color: "rgba(243, 220, 174)",
               marginBottom: 5,
             }}
           />
@@ -47,10 +47,10 @@ export default function Contact() {
               height: 50,
               padding: 10,
               marginRight: 10,
-              background: "rgb(0, 1, 65)",
+              background: "rgb(81, 64, 21)",
               borderRadius: 30,
               border: "none",
-              color: "rgba(62, 176, 184)",
+              color: "rgba(243, 220, 174)",
               marginBottom: 5,
             }}
           />
@@ -67,10 +67,10 @@ export default function Contact() {
               height: 50,
               padding: 10,
               marginRight: 10,
-              background: "rgb(0, 1, 65)",
+              background: "rgb(81, 64, 21)",
               borderRadius: 30,
               border: "none",
-              color: "rgba(62, 176, 184)",
+              color: "rgba(243, 220, 174)",
               marginBottom: 5,
             }}
           />
@@ -85,10 +85,10 @@ export default function Contact() {
               height: 50,
               padding: 10,
               marginRight: 10,
-              background: "rgb(0, 1, 65)",
+              background: "rgb(81, 64, 21)",
               borderRadius: 30,
               border: "none",
-              color: "rgba(62, 176, 184)",
+              color: "rgba(243, 220, 174)",
               marginBottom: 5,
             }}
           />
@@ -104,10 +104,10 @@ export default function Contact() {
               maxWidth: 700,
               height: 200,
               padding: 10,
-              background: "rgb(0, 1, 65)",
+              background: "rgb(81, 64, 21)",
               borderRadius: 30,
               border: "none",
-              color: "rgba(62, 176, 184)",
+              color: "rgba(243, 220, 174)",
             }}
           />
         </div>
@@ -118,10 +118,10 @@ export default function Contact() {
             padding: 10,
             margin: "auto",
             marginTop: 20,
-            background: "rgb(0, 1, 65)",
-            color: "rgba(62, 176, 184)",
+            background: "rgb(81, 64, 21)",
+            color: "rgba(243, 220, 174)",
             border: "none",
-            boxShadow: "1px 1px 5px 1px rgba(43, 184, 184)",
+            boxShadow: "1px 1px 5px 1px rgba(81, 64, 21)",
             borderRadius: 30,
             maxWidth: 400,
             width:'100%',

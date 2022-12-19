@@ -38,21 +38,21 @@ export default function Footer() {
               <Image
                 src='/icons/insta.svg'
                 alt='elMuñecoInstagram'
-                width={40}
-                height={40}
+                width={50}
+                height={50}
               />
             </ul>
             <ul>
               <Image
                 src='/icons/facebook.svg'
                 alt='elMuñecoFacebook'
-                width={40}
-                height={40}
+                width={50}
+                height={50}
               />
             </ul>
           </div>
-          <ul style={{ maxHeight: 100, maxWidth: 150 }}>
-            <Image src={"/icons/logo.png"} alt='Logo' width={150} height={80} />
+          <ul style={{ maxHeight: 50, maxWidth: 70 }}>
+            <Image src={"/icons/logo.png"} alt='Logo' width={60} height={50} />
           </ul>
         </div>
       </div>

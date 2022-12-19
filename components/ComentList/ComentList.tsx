@@ -48,7 +48,7 @@ export default function ComentList() {
 
   return (
     <div>
-      <h1 style={{ color: "rgb(0, 1, 65)", textAlign: "center" }}>
+      <h1 style={{ color: "rgb(81, 64, 21)", textAlign: "center" }}>
         La opion de nuestros clientes es importante
       </h1>
       <div
@@ -69,10 +69,10 @@ export default function ComentList() {
                 margin: 10,
                 height: 200,
                 padding: 10,
-                backgroundColor: "rgb(0, 1, 65)",
+                backgroundColor: "rgb(81, 64, 21)",
                 borderRadius: 20,
-                boxShadow: "1px 1px 5px 1px rgba(43, 184, 184)",
-                border: "1px solid rgba(43, 184, 184)",
+                boxShadow: "1px 1px 5px 1px rgba(81, 64, 21)",
+                border: "1px solid rgba(81, 64, 21)",
                 color: "black",
               }}
             >
@@ -84,7 +84,7 @@ export default function ComentList() {
                   width: 400,
                 }}
               >
-                <h3 style={{ color: "rgba(62, 176, 184)" }}>{coment.name}</h3>
+                <h3 style={{ color: "rgba(243, 220, 174)" }}>{coment.name}</h3>
                 <div>
                   <>
                     {returnArrayByNumber(coment.valoracion).map(
@@ -111,7 +111,7 @@ export default function ComentList() {
                   </>
                 </div>
               </div>
-              <p style={{ color: "rgba(62, 176, 184)" }}>{coment.Shopname}</p>
+              <p style={{ color: "rgba(243, 220, 174)" }}>{coment.Shopname}</p>
               <div
                 style={{
                   display: "flex",
@@ -120,7 +120,7 @@ export default function ComentList() {
                   position: "initial",
                 }}
               >
-                <p style={{ width: 400, color: "rgba(62, 176, 184)" }}>
+                <p style={{ width: 400, color: "rgba(243, 220, 174)" }}>
                   {coment.coment}
                 </p>
               </div>

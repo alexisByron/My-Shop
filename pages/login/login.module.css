@@ -1,10 +1,12 @@
 .fullContainer {
   width: 100%;
-  height: 100vh;
-  background-image: url("https://images.unsplash.com/photo-1554598286-ed7bfd1dedca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  height: 100%;
+  background-image: url("https://cdn.pixabay.com/photo/2018/09/17/21/46/rose-3684890_960_720.jpg");  
   display: grid;
   place-content: center;
   background-size: contain;
+  perspective: 80px;
+  perspective-origin: 500% 200%;
 }
 .containerLogin {
   max-width: 1440px;
@@ -16,21 +18,30 @@
   color: white;
   height: 100vh;
   border-radius: 50px;
-  box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 14px 7px rgba(81, 64, 21, 0.6);
+  border: 1px solid rgba(81, 64, 21);
 }
+.container_100 {
+  display: grid;
+  place-content: center;
+  background-size: contain;
+  perspective: 80px;
+  height: 100vh;
+}
+
 .title {
   padding-left: 20px;
   padding-right: 20px;
 }
 .pictureContainer {
   width: 100%;
-  backdrop-filter: brightness(0.4);
+  backdrop-filter: brightness(0.5);
   border-radius: 50px 0px 0px 50px;
 }
 
 .pictureLogo {
-  width: 50%;
-  height: 50%;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
 }
 
@@ -43,6 +54,8 @@
   justify-items: center;
   border-radius: 0px 50px 50px 0px;
   align-content: space-evenly;
+  perspective: 80px;
+  perspective-origin: 500% 200%;
 }
 
 .form {
@@ -53,7 +66,7 @@
 }
 
 .form ::placeholder {
-  color: rgba(62, 176, 184);
+  color: rgba(243, 220, 174);
   opacity: 1; /* Firefox */
   font-size: 20px;
 }
@@ -65,12 +78,13 @@
 .input {
   width: 100%;
   padding: 10px;
-  background: rgb(0, 1, 65);
+  background-color: rgb(81, 64, 21);
   border-radius: 30px;
   border: none;
-  color: rgba(62, 176, 184);
+  color: rgba(243, 220, 174);
   margin-bottom: 10px;
   font-size: 20px;
+  
 }
 
 .ButtonForm {
@@ -78,12 +92,20 @@
   height: 50px;
   padding: 10px;
   margin-right: 10px;
-  background: rgb(0, 1, 65);
+  background-color: rgb(81, 64, 21);
   border-radius: 30px;
-  border: none;
-  color: rgba(62, 176, 184);
+  /* border: none; */
+  color: rgba(243, 220, 174);;
   margin-bottom: 10px;
   font-size: 20px;
+  cursor: pointer;
+}
+
+.ButtonFormRegister2{
+  background-color: transparent;
+  color: rgb(243, 220, 174);
+  border-color: rgba(243, 220, 174);
+  border: 1px solid;
 }
 
 .recoverPass {
@@ -92,12 +114,14 @@
   padding-right: 20px;
   text-decoration: underline;
   font-weight: bold;
+  cursor: pointer;
+  /* color: rgb(81, 64, 21); */
 }
 
 .ButtonFormContainer {
   display: grid;
   justify-items: center;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 
 .pictureLogoResponsive {
@@ -115,12 +139,21 @@
   .fullContainer {
     display: block;
   }
+  .container_100 {
+    display: block;
+    place-content: center;
+    background-size: contain;
+    perspective: 80px;
+    /* height: auto; */
+  }
   .containerLogin {
     width: 100%;
-    height: 100%;
     margin: 0px;
     max-height: 100%;
+    border-radius: 0px;
+    /* height: auto; */
   }
+
   .pictureContainer {
     display: none;
   }
@@ -129,6 +162,7 @@
     height: 100%;
     margin: 0px;
     align-content: center;
+    border-radius: 0px;
   }
   .title {
     margin: 10px;
@@ -136,7 +170,7 @@
   .ButtonForm {
     width: 80%;
     padding: 10px;
-    color: rgba(62, 176, 184);
+    color: rgba(243, 220, 174);
     font-size: 15px;
   }
   .form {
@@ -146,7 +180,7 @@
     font-size: 15px;
   }
   .form ::placeholder {
-    color: rgba(62, 176, 184);
+    color: rgba(243, 220, 174);
     opacity: 1;
     max-width: 400px;
     font-size: 15px;
@@ -157,5 +191,32 @@
     height: 100px;
     width: 100px;
     margin: 50px;
+  }
+}
+
+@media (max-height: 740px) {
+  .containerLogin{
+    height: auto;
+  }
+  .container_100{
+    height: auto;
+  }
+}
+
+@media (max-height: 740px) and (min-width: 920px) {
+  .container_100 {
+    height: 100vh;
+  }
+  .containerLogin {
+    height: 100vh;
+  }
+}
+
+@media (min-height: 745px) {
+  .container_100 {
+    height: 100vh;
+  }
+  .containerLogin {
+    height: 100vh;
   }
 }

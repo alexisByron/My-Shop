@@ -5,7 +5,7 @@
 
 .form ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgba(62, 176, 184);
+  color: rgba(243, 220, 174);
   opacity: 1; /* Firefox */
   max-width: 400px;
 }
