@@ -13,7 +13,7 @@ export default function Contact() {
 
   return (
     <div className={styles.containerForm}>
-      <h3 style={{ textAlign: "center", color: "rgb(81, 64, 21)" }}>Contacto</h3>
+      <h1 style={{ textAlign: "center", color: "rgb(81, 64, 21)" }}>Contacto</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         style={{ textAlign: "center", maxWidth: 700 }}
