@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import {
   motion,
   AnimatePresence,
-  useMotionValue,
-  useMotionTemplate,
 } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/user/userReducer";
