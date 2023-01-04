@@ -13,7 +13,7 @@ export default function Contact() {
 
   return (
     <div className={styles.containerForm}>
-      <h1 style={{ textAlign: "center", color: "rgb(81, 64, 21)" }}>Contacto</h1>
+      <h1 style={{ textAlign: "center", color: "rgb(81, 64, 21)" }}>No dudes en escribirnos</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         style={{ textAlign: "center", maxWidth: 700 }}
@@ -37,24 +37,6 @@ export default function Contact() {
               marginBottom: 5,
             }}
           />
-
-          {/* include validation with required or other standard HTML validation rules */}
-          <input
-            {...register("exampleRequired2", { required: true })}
-            placeholder='Empresa'
-            style={{
-              width: "100%",
-              height: 50,
-              padding: 10,
-              marginRight: 10,
-              background: "rgb(81, 64, 21)",
-              borderRadius: 30,
-              border: "none",
-              color: "rgba(243, 220, 174)",
-              marginBottom: 5,
-            }}
-          />
-          {/* errors will return when field validation fails  */}
         </div>
 
         <div className={styles.rowContactField}>

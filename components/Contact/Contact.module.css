@@ -18,7 +18,9 @@
 }
 
 .containerForm{
-  text-align:-webkit-center
+  text-align:-webkit-center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 @media (max-width: 600px) {

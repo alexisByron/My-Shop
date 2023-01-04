@@ -1,5 +1,6 @@
 import styles from "./Info.module.css";
 import { motion } from "framer-motion";
+import ComponenteKlo from "./ComponenteKlo";
 
 export default function Info() {
   const cards = [
@@ -29,6 +30,7 @@ export default function Info() {
     },
   ];
 
+
   return (
     <motion.div
       className={styles.container}
@@ -37,31 +39,13 @@ export default function Info() {
       transition={{ duration: 4, type: "spring" }}
     >
       {cards.map((card, index) => (
-        <div key={index} className={styles.card}>
-          <div style={{ width: "100%", textAlign: "center", marginTop: 10 }}>
-            <motion.img
-              src={card.icon}
-              alt='Icon'
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 4, type: "spring" }}
-            />
-          </div>
-          <motion.h3
-            initial={{ x: 10 }}
-            animate={{ x: -10 }}
-            transition={{ duration: 4, type: "spring" }}
-          >
-            {card.title}
-          </motion.h3>
-          <motion.p
-            initial={{ y: 10 }}
-            animate={{ y: -10 }}
-            transition={{ duration: 4, type: "spring" }}
-          >
-            {card.description}
-          </motion.p>
-        </div>
+        <ComponenteKlo
+          key={index}
+          title={card.title}
+          description={card.description}
+          index={index}
+          icon={card.icon}
+        />
       ))}
     </motion.div>
   );

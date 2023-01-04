@@ -15,6 +15,48 @@ export function AnalyticsWrapper() {
   return <Analytics />;
 }
 
+const Productos = () => (
+  <div style={{ textAlign: "center", marginBottom: 50, marginTop: 50 }}>
+    <h1 style={{ color: "rgba(81, 64, 21)" }}>Productos Destacados</h1>
+    <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+      {[1, 2, 3].map((e) => {
+        return (
+          <div className={styles.productos} key={e}>
+            <img
+              src='https://cdn.pixabay.com/photo/2013/07/12/13/21/champagne-146885_960_720.png'
+              alt=''
+              style={{ height: 200, maxWidth: 200 }}
+            />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <p style={{ color: "rgba(81, 64, 21)" }}>Vino klo caro</p>
+              <p style={{ color: "rgba(81, 64, 21)" }}>$300.000</p>
+            </div>
+            <button className={styles.btnAdd}>Agregar a carrito</button>
+          </div>
+        );
+      })}
+      <motion.div
+        whileHover={{ scale: 1.5 }}
+        whileTap={{ scale: 0.5 }}
+        style={{
+          alignSelf: "center",
+          borderRadius: 20,
+          boxShadow: "rgb(255 174 18) 1px 3px 8px 2px",
+          padding: 20,
+        }}
+      >
+        <img src='/icons/arrow-right.svg' alt='' />
+        <h3 style={{ color: "rgb(81, 64, 21)" }}>Ver Todos</h3>
+      </motion.div>
+    </div>
+  </div>
+);
+
 export default function Home() {
   return (
     <div className={styles.fullContainer}>
@@ -144,9 +186,10 @@ export default function Home() {
             </div>
           </div>
           <Info />
-          <Partners />
+          {/* <Partners /> */}
+          <Productos />
           <ComentList />
-          <Contact />
+          {/* <Contact /> */}
         </>
       </div>
       <Footer />

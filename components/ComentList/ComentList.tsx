@@ -35,71 +35,74 @@ export default function ComentList() {
         "Excelente servicio, muy buenos productos, muy recomendado aunque un poco caro creo que podrian bajar un poco los precios",
       valoracion: 3.5,
     },
-    // {
-    //   name: "Pedro Perez",
-    //   Shopname: "Tienda de pedro",
-    //   coment:
-    //     "Excelente servicio, muy buenos productos, muy recomendado aunque un poco caro creo que podrian bajar un poco los precios",
-    //   valoracion: 5,
-    // },
+    {
+      name: "Pedro Perez",
+      Shopname: "Tienda de pedro",
+      coment:
+        "Excelente servicio, muy buenos productos, muy recomendado aunque un poco caro creo que podrian bajar un poco los precios",
+      valoracion: 5,
+    },
   ]);
 
   const returnArrayByNumber = (valoracion: number) => {
     return Array.from({ length: valoracion }, (v, i) => i);
   };
 
+  const ComponenteComentario = ({ index, coment }: any) => (
+    <motion.div
+      key={index}
+      initial={{ x: -400 * index }}
+      animate={{ x: 0 }}
+      transition={{ duration: 5, type: "spring" }}
+      className={styles.items}
+    >
+      <div key={index} className={styles.card}>
+        <h3 style={{ color: "rgba(243, 220, 174)" }}>{coment.name}</h3>
+        <div>
+          <>
+            {returnArrayByNumber(coment.valoracion).map((item, index) => (
+              <Image
+                src='/icons/estrella.png'
+                alt='estrella'
+                width={30}
+                height={30}
+                key={index}
+              />
+            ))}
+            {coment.valoracion % 1 !== 0 ? (
+              <Image
+                src='/icons/mitadEstrella.png'
+                alt='estrella'
+                width={30}
+                height={30}
+              />
+            ) : (
+              <> </>
+            )}
+          </>
+        </div>
+      </div>
+      <p style={{ color: "rgba(243, 220, 174)" }}>{coment.Shopname}</p>
+      <div>
+        <p style={{ color: "rgba(243, 220, 174)" }}>{coment.coment}</p>
+      </div>
+    </motion.div>
+  );
+
   return (
     <>
-    <h1 style={{ color: "rgb(81, 64, 21)", textAlign: "center" }}>
+      <h1 style={{ color: "rgb(81, 64, 21)", textAlign: "center" }}>
         Los Comentarios de nuestros clientes nos interesan
       </h1>
-    <div style={{overflow:'auto'}}>
-      <div className={styles.container}>
-        {coments.map((coment, index) => {
-          return (
-            <motion.div
-              key={index}
-              initial={{ x: -400 * index }}
-              animate={{ x: 0 }}
-              transition={{ duration: 5, type: "spring" }}
-              className={styles.items}
-            >
-              <div key={index} className={styles.card}>
-                <h3 style={{ color: "rgba(243, 220, 174)" }}>{coment.name}</h3>
-                <div >
-                  <>
-                    {returnArrayByNumber(coment.valoracion).map(
-                      (item, index) => (
-                        <Image
-                          src='/icons/estrella.png'
-                          alt='estrella'
-                          width={30}
-                          height={30}
-                          key={index}
-                        />
-                      )
-                    )}
-                    {coment.valoracion % 1 !== 0 ? (
-                      <Image
-                        src='/icons/mitadEstrella.png'
-                        alt='estrella'
-                        width={30}
-                        height={30}
-                      />
-                    ) : (
-                      <> </>
-                    )}
-                  </>
-                </div>
-              </div>
-              <p style={{ color: "rgba(243, 220, 174)" }}>{coment.Shopname}</p>
-              <div>
-                <p style={{ color: "rgba(243, 220, 174)" }}>{coment.coment}</p>
-              </div>
-            </motion.div>
-          );
-        })}
+      <div style={{ overflow: "auto" }}>
+        <div className={styles.container}>
+          {coments.map((coment, index) => {
+            return (
+              <ComponenteComentario index={index} coment={coment} key={index} />
+            );
+          })}
+        </div>
       </div>
-    </div></>
+    </>
   );
 }
